@@ -1,0 +1,137 @@
+﻿/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #046169; /* Culoarea de fundal */
+    color: white;
+}
+/* Elemente de navigare la stânga */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+/* Aliniere la dreapta pentru dropdown */
+.nav-right {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+/* Stiluri pentru dropdown-ul de limbă */
+.language-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.language-btn {
+    background-color: #217b7e; /* Culoarea de fundal pentru butonul dropdown */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+    .language-btn:hover {
+        background-color: #10898d; /* Culoarea de hover pentru butonul dropdown */
+    }
+
+.language-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #217b7e;
+    min-width: 160px;
+    z-index: 1;
+}
+
+    .language-dropdown-content a {
+        color: #046169;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+
+        .language-dropdown-content a:hover {
+            background-color: #10898d; /* Culoarea de hover pentru link-urile din dropdown */
+        }
+
+.language-dropdown:hover .language-dropdown-content {
+    display: block;
+}
+/* Steagul limbii și butonul de selecție */
+.language-btn img {
+    margin-right: 8px; /* Spațiu între steag și text */
+    width: 20px;
+    height: auto;
+    background-color: #046169;
+}
+/* Culoarea pentru steagul limbii selectate */
+.language-btn.selected {
+    background-color: #10898d; /* Culoare pentru butonul limbii selectate */
+    border-radius: 5px;
+}
+/* Dropdown pentru limbi - stiluri pentru fiecare limbă */
+.language-dropdown-content a {
+    display: flex;
+    align-items: center;
+}
+
+    .language-dropdown-content a img {
+        margin-right: 8px; /* Adăugăm spațiu între steag și text */
+        width: 20px;
+        height: auto;
+    }
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+a {
+    color: #0077cc;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}

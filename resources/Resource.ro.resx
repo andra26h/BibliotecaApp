@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>Actiune</value>
+  </data>
+  <data name="AddNewAuthor" xml:space="preserve">
+    <value>Adaugă autor</value>
+  </data>
+  <data name="AddNewBook" xml:space="preserve">
+    <value>Adaugă carte</value>
+  </data>
+  <data name="AddNewCategory" xml:space="preserve">
+    <value>Adaugă categorie</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Adresă</value>
+  </data>
+  <data name="AddressRequired" xml:space="preserve">
+    <value>Adresa e obligatorie</value>
+  </data>
+  <data name="AlreadyBorrowedError" xml:space="preserve">
+    <value>Cartea este deja împrumutată</value>
+  </data>
+  <data name="Author" xml:space="preserve">
+    <value>Autor</value>
+  </data>
+  <data name="AuthorError" xml:space="preserve">
+    <value>A apărut o eroare la adăugarea unui nou autor</value>
+  </data>
+  <data name="AuthorName" xml:space="preserve">
+    <value>Numele autorului</value>
+  </data>
+  <data name="AuthorNameRequired" xml:space="preserve">
+    <value>Numele autorului este obligatoriu</value>
+  </data>
+  <data name="AuthorSucces" xml:space="preserve">
+    <value>Autorul a fost adăugat cu succes</value>
+  </data>
+  <data name="AvailableCopies" xml:space="preserve">
+    <value>Exemplare disponibile</value>
+  </data>
+  <data name="AvailableCopiesRequired" xml:space="preserve">
+    <value>Numărul de exemplare este obligatoriu</value>
+  </data>
+  <data name="BookAddError" xml:space="preserve">
+    <value>A apărut o eroare la daugarea cărții. Te rugăm încearcă din nou.</value>
+  </data>
+  <data name="BookAddGenericError" xml:space="preserve">
+    <value>A apărut o eroare! Încercați mai târziu</value>
+  </data>
+  <data name="BookAddSuccess" xml:space="preserve">
+    <value>Cartea a fost adăugaată cu succes!</value>
+  </data>
+  <data name="BookAddValidationError" xml:space="preserve">
+    <value>Datele introduse sunt invalide. Te rugăm să verifici formularul și să încerci din nou.</value>
+  </data>
+  <data name="Books" xml:space="preserve">
+    <value>Cărți</value>
+  </data>
+  <data name="BookTitle" xml:space="preserve">
+    <value>Titlu</value>
+  </data>
+  <data name="BookTitleRequired" xml:space="preserve">
+    <value>Titlul este obligatoriu</value>
+  </data>
+  <data name="Borrow" xml:space="preserve">
+    <value>Împrumută</value>
+  </data>
+  <data name="BorrowBook" xml:space="preserve">
+    <value>Imprumută carte</value>
+  </data>
+  <data name="BorrowDate" xml:space="preserve">
+    <value>Dată împrumut</value>
+  </data>
+  <data name="BorrowDateRequired" xml:space="preserve">
+    <value>Data împrumutului este obligatorie</value>
+  </data>
+  <data name="BorrowedOn" xml:space="preserve">
+    <value>Împrumutată în</value>
+  </data>
+  <data name="BorrowSuccess" xml:space="preserve">
+    <value>Cartea a fost împrumutată cu succes!</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Categorie</value>
+  </data>
+  <data name="CategoryError" xml:space="preserve">
+    <value>A apărut o eroare la adăugarea unei noi categorii</value>
+  </data>
+  <data name="CategoryName" xml:space="preserve">
+    <value>Numele categoriei</value>
+  </data>
+  <data name="CategoryNameRequired" xml:space="preserve">
+    <value>Numele categoriei este obligatoriu</value>
+  </data>
+  <data name="CategorySucces" xml:space="preserve">
+    <value>Categoria a fost adăugată cu succes</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comentariu</value>
+  </data>
+  <data name="CommentRequired" xml:space="preserve">
+    <value>Comentariul este obligatoriu</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirmare parolă</value>
+  </data>
+  <data name="CoverImage" xml:space="preserve">
+    <value>Copertă</value>
+  </data>
+  <data name="DateOfBirth" xml:space="preserve">
+    <value>Data nașterii</value>
+  </data>
+  <data name="DateOfBirthRequired" xml:space="preserve">
+    <value>Data nașterii e obligatorie</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Șterge</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Descriere</value>
+  </data>
+  <data name="DownloadPDF" xml:space="preserve">
+    <value>Descarcă PDF</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Editează</value>
+  </data>
+  <data name="EditBook" xml:space="preserve">
+    <value>Modifică cartea</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmailError" xml:space="preserve">
+    <value>Adresa de email nu este validă.</value>
+  </data>
+  <data name="EmailExistsError" xml:space="preserve">
+    <value>Există deja un cont asociat acestui email</value>
+  </data>
+  <data name="EmailRequired" xml:space="preserve">
+    <value>Adresa de email este obligatorie</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>Engleză</value>
+  </data>
+  <data name="ErrorOnBorrow" xml:space="preserve">
+    <value>Trebuie să fiți autentificat pentru a împrumuta o carte!</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Prenume</value>
+  </data>
+  <data name="FirstNameRequired" xml:space="preserve">
+    <value>Prenumele este obligatoriu</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Acasă</value>
+  </data>
+  <data name="IsPopular" xml:space="preserve">
+    <value>E popular?</value>
+  </data>
+  <data name="IsRecommended" xml:space="preserve">
+    <value>Recomanzi?</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Limbă</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Nume de familie</value>
+  </data>
+  <data name="LastNameRequired" xml:space="preserve">
+    <value>Numele de familie este obligatoriu</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Autentificare</value>
+  </data>
+  <data name="LoginError" xml:space="preserve">
+    <value>Nume de utilizator sau parolă incorectă. Te rugăm să încerci din nou!</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Deconectare</value>
+  </data>
+  <data name="MinLengthPassword" xml:space="preserve">
+    <value>Parola trebuie să aibă cel puțin 8 caractere.</value>
+  </data>
+  <data name="NoAvailableCopiesError" xml:space="preserve">
+    <value>Nu mai sunt copii disponibile pentru împrumut!</value>
+  </data>
+  <data name="NoBorrowedBooks" xml:space="preserve">
+    <value>Nu aveți cărți împrumutate</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Parolă</value>
+  </data>
+  <data name="PasswordMatch" xml:space="preserve">
+    <value>Parolele nu se potrivesc.</value>
+  </data>
+  <data name="PasswordRequired" xml:space="preserve">
+    <value>Parola este obligatorie</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Număr de telefon</value>
+  </data>
+  <data name="PopularBooks" xml:space="preserve">
+    <value>Cele mai populare cărți</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="Rating" xml:space="preserve">
+    <value>Notă</value>
+  </data>
+  <data name="RatingRequired" xml:space="preserve">
+    <value>Nota e obligatorie</value>
+  </data>
+  <data name="RegExError" xml:space="preserve">
+    <value>Parola trebuie să conțină cel puțin o literă și o cifră.</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Înregistrare</value>
+  </data>
+  <data name="RegisterError" xml:space="preserve">
+    <value>A apărut o eroare la crearea contului:</value>
+  </data>
+  <data name="RegisterSuccess" xml:space="preserve">
+    <value>Înregistrare cu succes!</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Ține-mă minte</value>
+  </data>
+  <data name="ReturnDate" xml:space="preserve">
+    <value>Dată returnare</value>
+  </data>
+  <data name="ReviewDate" xml:space="preserve">
+    <value>Data review</value>
+  </data>
+  <data name="ReviewDateRequired" xml:space="preserve">
+    <value>Data review-ului este obligatoriu</value>
+  </data>
+  <data name="RoleName" xml:space="preserve">
+    <value>Denumire rol</value>
+  </data>
+  <data name="Romanian" xml:space="preserve">
+    <value>Română</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Salvează modificările</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Căutare</value>
+  </data>
+  <data name="SearchBooks" xml:space="preserve">
+    <value>Caută cărți</value>
+  </data>
+  <data name="SelectAuthor" xml:space="preserve">
+    <value>Selectează un autor</value>
+  </data>
+  <data name="SelectCategory" xml:space="preserve">
+    <value>Selectează o categorie</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="StatusRequired" xml:space="preserve">
+    <value>Statusul este obligatoriu</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Bibliotecă Virtuală</value>
+  </data>
+  <data name="UpdateBookError" xml:space="preserve">
+    <value>A apărut o eroare în timpul actualizării</value>
+  </data>
+  <data name="UpdateBookSuccess" xml:space="preserve">
+    <value>Cartea a fost actualizată cu succes</value>
+  </data>
+  <data name="UserProfile" xml:space="preserve">
+    <value>Profilul utilizatorului</value>
+  </data>
+  <data name="UserExistsError" xml:space="preserve">
+    <value>Deja există un cont asociat acestui utilizator/email</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Nume utilizator</value>
+  </data>
+  <data name="UsernameRequired" xml:space="preserve">
+    <value>Numele de utilizator este obligatoriu</value>
+  </data>
+  <data name="UserNotFound" xml:space="preserve">
+    <value>Utilizatorul nu a fost găsit!</value>
+  </data>
+  <data name="BorrowedBooks" xml:space="preserve">
+    <value>Cărți împrumutate</value>
+  </data>
+  <data name="DeleteConfirmation" xml:space="preserve">
+    <value>Sigur vrei să ștergi această carte?</value>
+  </data>
+</root>

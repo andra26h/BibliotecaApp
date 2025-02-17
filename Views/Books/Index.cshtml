@@ -1,0 +1,199 @@
+﻿@model IEnumerable<BibliotecaApp.Models.BookModel>
+@using BibliotecaApp.resources
+@using Microsoft.AspNetCore.Mvc.Rendering
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var roleId = HttpContextAccessor.HttpContext.Session.GetInt32("RoleId");
+    // Verifică dacă utilizatorul este admin
+    var isAdmin = roleId == 1; // Adminul are id-ul 1 în baza de date
+    var isGuest = roleId == 3; //guestu are id-u 3
+}
+
+@section scripts {
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Funcția pentru deschiderea modalului de adăugare a cărții
+        function openAddBookModal() {
+            $.get('@Url.Action("Create", "Books")', function (data) {
+                // Adaugă modalul în body-ul paginii
+                $('body').append(data);
+                // Deschide modalul
+                $('#addBookModal').modal('show');
+            });
+        }
+
+        // Funcția pentru deschiderea modalului de adăugare autor
+        function openAddAuthorModal() {
+            $.get('@Url.Action("Index", "Author")', function (data) {
+                // Adaugă modalul în body-ul paginii
+                $('body').append(data);
+                // Deschide modalul
+                $('#createAuthorModal').modal('show');
+            });
+        }
+
+        // Funcția pentru deschiderea modalului de adăugare categorie
+        function openAddCategoryModal() {
+            $.get('@Url.Action("Index", "Category")', function (data) {
+                // Adaugă modalul în body-ul paginii
+                $('body').append(data);
+                // Deschide modalul
+                $('#createCategoryModal').modal('show');
+            });
+        }
+
+        // Funcția pentru deschiderea modalului de împrumut a cărții
+        function openBorrowBookModal(bookId) {
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("Index", "Borrow")',
+                data: { bookId: bookId }, // Trebuie să folosești `bookId` corect
+                success: function(response) {
+                    $('body').append(response);
+                    // Deschide modalul
+                    $('#borrowBookModal').modal('show');
+                },
+                error: function(xhr, status, error) {
+                    console.log("eroare");
+                }
+            });
+        }
+
+        // Funcția pentru ștergerea cărții
+        function deleteBook(bookId) {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("Delete", "Books")',
+                data: { bookId: bookId },
+                success: function(response) {
+                    // Dacă ștergerea este reușită, elimină cardul cărții din pagină
+                    $('#book-' + bookId).remove(); // Se presupune că ID-ul cărții este folosit pentru a identifica cardul în pagină
+                    alert('Cartea a fost ștearsă cu succes!');
+                },
+                error: function(xhr, status, error) {
+                    alert('Eroare la ștergerea cărții. Încearcă din nou.');
+                }
+            });
+        }
+
+        // Atașează funcțiile la butoane manual fără $(document).ready() sau $(function)
+        // Buton pentru adăugarea unei cărți
+        $('.addBookBtn').click(function (e) {
+            e.preventDefault();
+            openAddBookModal();
+        });
+
+        // Buton pentru adăugarea unui autor
+        $('.addAuthorBtn').click(function (e) {
+            e.preventDefault();
+            openAddAuthorModal();
+        });
+
+        // Buton pentru adăugarea unei categorii
+        $('.addCategoryBtn').click(function (e) {
+            e.preventDefault();
+            openAddCategoryModal();
+        });
+
+        // Buton pentru împrumutul unei cărți
+        $('.borrowBookBtn').click(function (e) {
+            e.preventDefault();
+            var bookId = $(this).data('book-id');
+            console.log(bookId);
+            openBorrowBookModal(bookId);
+        });
+
+        // Buton pentru ștergerea unei cărți
+        $('.deleteBookBtn').click(function (e) {
+            e.preventDefault();
+            var bookId = $(this).data('book-id'); // Presupunem că ID-ul cărții este în atributul data-book-id
+            if (confirm('@Resource.DeleteConfirmation')) {
+                deleteBook(bookId);
+            }
+        });
+    </script>
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Books List</h1>
+
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <div class="btn-group" role="group">
+                <!-- Admin Only Add Book Button -->
+                @if (isAdmin)
+                {
+                    <button type="button" class="btn btn-primary addBookBtn me-2">@Resource.AddNewBook</button>
+                    <button type="button" class="btn btn-primary addAuthorBtn me-2">@Resource.AddNewAuthor</button>
+                    <button type="button" class="btn btn-primary addCategoryBtn">@Resource.AddNewCategory</button>
+                }
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <form class="d-flex" action="@Url.Action("Search", "Books")" method="get">
+                <input type="text" class="form-control" name="search" placeholder="@Resource.SearchBooks" aria-label="@Resource.SearchBooks">
+                <button class="btn btn-outline-primary ms-2" type="submit">@Resource.Search</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        @foreach (var book in Model)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    @if (!string.IsNullOrEmpty(book.CoverImage))
+                    {
+                        <img src="@Url.Content("~/images/" + book.CoverImage)" class="card-img-top" alt="@book.Title" />
+                    }
+                    else
+                    {
+                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="No Cover Image Available">
+                    }
+
+                    <div class="card-body">
+                        <h5 class="card-title">@book.Title</h5>
+                        <p class="card-text">Author: @book.AuthorName</p>
+                        <p class="card-text">Category: @book.CategoryName</p>
+                        <p class="card-text">Available Copies: @book.AvailableCopies</p>
+                        <p class="card-text">Description: @book.Description</p>
+
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                @Resource.Actions
+                            </button>
+                           @*  @if(!isGuest) { *@
+                            <ul class="dropdown-menu">
+                                @if (isAdmin)
+                                {
+                                    <li><a class="dropdown-item editBookBtn" href="#" data-book-id="@book.BookId">@Resource.Edit</a></li>
+                                        <li><a class="dropdown-item deleteBookBtn" href="#" data-book-id="@book.BookId">@Resource.Delete</a></li>
+                                }
+                                @if (!isAdmin)
+                                {
+                                    <li><a class="dropdown-item" href="@Url.Action("DownloadPdf", "Books", new { id = book.BookId })">@Resource.DownloadPDF</a></li>
+                                    <!-- Butonul de împrumut care se va dezactiva dacă sunt 0 copii disponibile sau utilizatorul a împrumutat deja cartea -->
+                                    <li>
+                                        <a class="dropdown-item borrowBookBtn" href="#" data-book-id="@book.BookId" @(book.AvailableCopies <= 0 || book.AlreadyBorrowed ? "disabled" : "")>
+                                            @Resource.Borrow
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                           @*  } *@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

@@ -1,0 +1,58 @@
+﻿@model UserProfileModel
+@using BibliotecaApp.resources
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h2>@Resource.UserProfile</h2>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h4>@Resource.UserProfile</h4>
+            <p>@Resource.FirstName: @Model.User.FirstName</p>
+            <p>@Resource.LastName: @Model.User.LastName</p>
+            <p>@Resource.Address: @Model.Address</p>
+            <p>@Resource.DateOfBirth: @Model.DateOfBirth</p>
+            <p>@Resource.PhoneNumber: @Model.PhoneNumber</p>
+            <p>@Resource.Username: @Model.User.Username</p>
+            <p>@Resource.Email: @Model.User.Email</p>
+
+        </div>
+    </div>
+
+    <h4>@Resource.BorrowedBooks</h4>
+
+    @if (ViewBag.BorrowedBooks != null && ((List<BorrowingModel>)ViewBag.BorrowedBooks).Count > 0)
+    {
+        <div class="row">
+            @foreach (var book in (List<BorrowingModel>)ViewBag.BorrowedBooks)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        @if (!string.IsNullOrEmpty(book.Book.CoverImage))
+                        {
+                            <img src="@Url.Content("~/images/" + book.Book.CoverImage)" class="card-img-top" alt="@book.Book.Title" />
+                        }
+                        else
+                        {
+                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="No Cover Image Available">
+                        }
+
+                        <div class="card-body">
+                            <h5 class="card-title">@book.Book.Title</h5>
+                            <p class="card-text">@book.Book.Description</p>
+                            <p class="card-text">@Resource.BorrowedOn: @book.BorrowDate.ToString("d")</p>
+                            <p class="card-text">@Resource.ReturnDate: @book.ReturnDate?.ToString("d")</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p>@Resource.NoBorrowedBooks</p>
+    }
+</div>
