@@ -8,6 +8,9 @@ Aplicația a fost construită folosind ASP.NET MVC.
 
 Structura bazei de date permite gestionarea eficientă a informațiilor despre cărți, utilizatori, autori/categorii, recenzii și împrumuturi.
 
+![Diagrama bazei de date](wwwroot/images/diagrama.png)
+
+
 ### Schema funcționării aplicației
 
 ---
